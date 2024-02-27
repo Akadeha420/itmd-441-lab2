@@ -1,7 +1,14 @@
 /* Flexbox Part 1 */
 
 #flex-section1 ul {
+	list-style-type: none;
+	margin: 0;
+}
 
+#flex-section1 ul li {
+	display: inline;
+	margin-left: 8px;
+	margin-right: 40px;
 }
 
 /* end Flexbox Part 1 */
@@ -10,23 +17,26 @@
 /* Flexbox Part 2 */
 
 #flex-section2 ul {
-
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
 }
 
 #flex-section2 li {
-
+	flex-basis: 100%;
 }
 
 #flex-section2 .item1 {
-
+	order: 1;
 }
 
 #flex-section2 .item2 {
-
+	order: 3;
 }
 
 #flex-section2 .item3 {
-
+	order: 2;
 }
 
 /* end Flexbox Part 2 */
@@ -35,11 +45,17 @@
 /* Flexbox Part 3 */
 
 #flex-section3 .box {
-
+	display: flex;
+	justify-content: center;
+	padding: 130px;
 }
 
 #flex-section3 .tags ul {
-
+	display: inline-flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	flex-wrap: wrap;
 }
 
 /* end Flexbox Part 3 */
@@ -48,7 +64,13 @@
 /* Grid Part 1 */
 
 #grid-section1 .grid {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(4, 1fr);
+}
 
+#grid-section1 .greybox {
+	height: 100px;
 }
 
 /* end Grid Part 1 */
@@ -57,11 +79,19 @@
 /* Grid Part 2 */
 
 #grid-section2 .gridboxblue {
-
+	background-color: blue;
+	grid-column: 2 / 4;
+	grid-row: 1 / 4;
+	z-index: 2;
+	opacity: 75%;
 }
 
 #grid-section2 .gridboxred {
-
+	background-color: red;
+	grid-column: 1 / 3;
+	grid-row: 2 / 3;
+	z-index: 1;
+	opacity: 75%;
 }
 
 /* end Grid Part 2 */
@@ -70,23 +100,36 @@
 /* Grid Part 3 */
 
 #grid-section3 .grid {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	/* First column twice the width of the second column */
+	grid-template-rows: 100px 300px 100px;
+	/* Rows defined as specified */
+	grid-gap: 10px;
+	/* Gap between rows and columns */
 
 }
 
 #grid-section3 .box1 {
-
+	grid-column: 1/4;
+	order: 1;
 }
 
 #grid-section3 .box2 {
-
+	order: 3;
+	grid-row: 2 / 3;
+	grid-column: 2/4;
 }
 
 #grid-section3 .box3 {
 
+	order: 2;
+
 }
 
 #grid-section3 .box4 {
-
+	grid-column: 1/4;
+	order: 4;
 }
 
 /* end Grid Part 3 */
@@ -107,8 +150,14 @@
 #transition-section .box a:hover {
 	background-color: #cc0000;
 	color: #fff;
-
-
+	transition-duration: 0.5s
 }
+
+#transition-section .box a:not(:hover) {
+	transition-duration: 3s
+}
+
+
+
 
 /* end Transition Part */
